@@ -12,7 +12,11 @@ const valueFilterSlice = createSlice({
         type: string;
       }
     ): VALUE_FILTER_ENUM => {
-      return (state = action.payload);
+      if (action.payload === VALUE_FILTER_ENUM.one) {
+        return state
+      } else {
+        return state = VALUE_FILTER_ENUM.two;
+      }
     },
   },
 });
