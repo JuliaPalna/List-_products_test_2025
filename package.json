@@ -3,13 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://JuliaPalna.githud.io/list_products_test_2025",
+  "homepage": "https://juliapalna.github.io/list_products_test_2025/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages --d dist"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.2.5",

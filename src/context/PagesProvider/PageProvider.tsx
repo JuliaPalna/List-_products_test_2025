@@ -41,7 +41,7 @@ export const PagesProvider = ({ children }: IPageProviderProps): ReactElement =>
       window.removeEventListener("popstate", handelPopstate);
     }
   }, [])
-    
+
   return (
     <PagesContext.Provider value={{ ...page, navigate, setSearchParam }}>
       {children}
