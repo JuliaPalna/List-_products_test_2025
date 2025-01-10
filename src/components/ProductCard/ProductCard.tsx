@@ -12,7 +12,7 @@ export const ProductCard: React.FC<IProductCardProps> = ({
       id={`${product.id}`}
       width={320}
       height={500}
-      key={product.id}
+      key={`card-${product.id}`}
       onClick={onClick}
     >
       <Image

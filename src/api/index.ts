@@ -1,2 +1,3 @@
-export * from "./getApiData";
-export * from "./getApiProductId";
+export * from "./fetchApiData";
+export * from "./fetchApiProductId";
+export * from "./interface";

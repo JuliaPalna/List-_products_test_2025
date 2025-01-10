@@ -4,11 +4,11 @@ import { VALUE_FILTER_ENUM } from "./enum";
 import { filterLikeProduct } from "@/scripts/utils";
 import { IFilter, TypeEventRadio } from "./interface";
 import { useSelector } from "react-redux";
-import { IRootState } from "@/store";
 import { TypeProduct } from "@/pages";
+import { TypeRootState } from "@/store";
 
 export const useFilter = (): IFilter => {
-  const history = useSelector((state: IRootState) => state.productsList);
+  const history = useSelector((state: TypeRootState) => state.productsList);
 
   const { setSearchParam, search } = usePages();
 

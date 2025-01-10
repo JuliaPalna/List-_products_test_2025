@@ -1,10 +1,10 @@
 import { IValueFilter } from "./interface";
 import { useDispatch, useSelector } from "react-redux";
 import { togglevalueFilter } from "@/store/valueFilterReducer";
-import { IRootState } from "@/store";
+import { TypeRootState } from "@/store";
 
 export const useValueFilter = (): IValueFilter => {
-  const valueFilter = useSelector((state: IRootState) => state.valueFilter);
+  const valueFilter = useSelector((state: TypeRootState) => state.valueFilter);
   const dispatch = useDispatch();
 
   const handelValueFilter = (): void => {

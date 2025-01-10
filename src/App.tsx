@@ -2,7 +2,7 @@ import "./App.css";
 import { Container, Flex } from "@chakra-ui/react";
 import { PagesProvider, RenderPage } from "./context/PagesProvider";
 
-function App() {
+function App(): JSX.Element {
   return (
     <PagesProvider>
       <Container>

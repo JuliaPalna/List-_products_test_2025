@@ -1,15 +1,15 @@
 import { formSchema, FormSchema, IForm } from "@/pages/FormPage";
 import { TypeProduct } from "@/pages/ProductPage";
-import { IRootState } from "@/store";
 import { addProduct } from "@/store/productsListReducer/clices";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
+import { TypeApiDispatch, TypeRootState } from "@/store";
 
 export const useCreateProduct = (): IForm => {
-  const history = useSelector((state: IRootState) => state.productsList);
-  const dispatch = useDispatch();
+  const history = useSelector((state: TypeRootState) => state.productsList);
+  const dispatch = useDispatch<TypeApiDispatch>();
 
   const {
     register,

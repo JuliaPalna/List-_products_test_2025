@@ -1,4 +1,4 @@
-export * from "./FilterCards";
+export * from "./FilterCardList";
 export * from './FormCreateNewProduct';
-export * from './MessegeInfo';
 export * from './ProductCard';
+export * from "./ProductListView";

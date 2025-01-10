@@ -1,27 +1,24 @@
 import { ReactNode } from "react";
 import { usePages } from "./usePages";
-import { FormPages, MainPage, ProductPage, ProductsPage } from "@/pages";
+import { FormPages, MainPage, ProductPage, ProductListPage } from "@/pages";
 
 export const RenderPage = (): ReactNode => {
-	const { name } = usePages();
+  const { name } = usePages();
 
-	if (name === "/") {
-		return <MainPage />;
-	}
+  switch (name) {
+    case "/":
+      return <MainPage />;
 
-	if (name === "/products") {
-		return <ProductsPage />;
-	}
+    case "/products":
+      return <ProductListPage />;
 
-  if (name === "/form") {
-		return <FormPages />;
-	}
+    case "/form":
+      return <FormPages />;
 
-	const productId: string = name.replace("/products/", "");
-	
-	if(productId) {
-		return <ProductPage id={+productId} />;
-	}
+    case `/products/${+name.replace("/products/", "")}`:
+      return <ProductPage id={+name.replace("/products/", "")} />;
 
-	return null;
+    default:
+      return <MainPage />;
+  }
 };

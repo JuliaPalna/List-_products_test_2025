@@ -1,6 +1,6 @@
 import { TypeProduct } from "@/pages";
 
-export const getApiProductId = async (
+export const fetchApiProductId = async (
   id: number
 ): Promise<TypeProduct | undefined> => {
   try {

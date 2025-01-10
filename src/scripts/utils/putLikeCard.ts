@@ -4,11 +4,8 @@ export const putLikeCard = (
   array: TypeProduct[],
   id: number
 ): TypeProduct[] => {
-  return array.map((product: TypeProduct) => {
-    if (product.id === id) {
-      product.like = !product.like;
-    }
-
-    return product;
-  });
+  for (const product of array) {
+    product.like = product.id === id ? !product.like : product.like;
+  }
+  return array;
 };

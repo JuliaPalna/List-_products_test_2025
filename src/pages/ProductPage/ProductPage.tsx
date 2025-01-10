@@ -3,12 +3,12 @@ import { TypeProduct } from "./typeProduct";
 import { Transit } from "@/context";
 import { IProductPageProps } from "./interface";
 import { useSelector } from "react-redux";
-import { IRootState } from "@/store";
+import { TypeRootState } from "@/store";
 
 export const ProductPage: React.FC<IProductPageProps> = ({
   id,
 }): JSX.Element => {
-  const history = useSelector((state: IRootState) => state.productsList);
+  const history = useSelector((state: TypeRootState) => state.productsList);
 
   const product: TypeProduct | undefined = history.find(
     (product: TypeProduct) => {
