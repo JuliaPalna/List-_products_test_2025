@@ -1,23 +1,23 @@
 import { Transit } from "@/context";
-import { useFilter, useFetchProductList } from "@/scripts/hooks";
-import { Box, Button, Flex, For, Text } from "@chakra-ui/react";
+import { useFilter } from "@/scripts/hooks";
+import { Box, Flex, For, Text } from "@chakra-ui/react";
 import { ProductCard } from "../ProductCard";
 import { useProductListView } from "@/scripts/hooks/useProductListView/useProductListView";
+import { REQUEST_STATE } from "@/api";
+import { TypeRootState } from "@/store";
+import { useSelector } from "react-redux";
 
 export const ProductListView = (): JSX.Element => {
-  const { state, refetch } = useFetchProductList();
   const { filteredProducts } = useFilter();
-
+  const state = useSelector((state: TypeRootState) => state.stateFetching);
   const { handelOnClick } = useProductListView();
 
   switch (state.status) {
-    case "idel":
-    case "pending":
-      console.log("Loading")
+    case REQUEST_STATE.idel:
+    case REQUEST_STATE.pending:
       return <Text>Loading...</Text>;
 
-    case "success":
-      console.log(filteredProducts);
+    case REQUEST_STATE.success:
       return (
         <Flex gap="4" wrap="wrap" justify="center">
           <For each={filteredProducts}>
@@ -34,13 +34,8 @@ export const ProductListView = (): JSX.Element => {
         </Flex>
       );
 
-    case "error":
-      return (
-        <Box>
-          <Text>error!</Text>
-          <Button onClick={refetch}>Refetch</Button>
-        </Box>
-      );
+    case REQUEST_STATE.error:
+      return <Text>error! Please try to log in again</Text>;
 
     default:
       return <Text>Not found...</Text>;

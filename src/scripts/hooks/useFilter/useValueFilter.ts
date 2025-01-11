@@ -5,6 +5,7 @@ import { TypeRootState } from "@/store";
 
 export const useValueFilter = (): IValueFilter => {
   const valueFilter = useSelector((state: TypeRootState) => state.valueFilter);
+
   const dispatch = useDispatch();
 
   const handelValueFilter = (): void => {

@@ -3,7 +3,6 @@ import { FilterCardList, ProductListView } from "@/components";
 import { Transit } from "@/context";
 
 export const ProductListPage = (): JSX.Element => {
-
   return (
     <Container>
       <Stack align="flex-start">

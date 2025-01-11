@@ -1,7 +1,7 @@
 import { TypeProduct } from "@/pages";
 
 export enum REQUEST_STATE {
-  idel = "idel",
+  idel = "idle",
   pending = "pending",
   success = "success",
   error = "error",
